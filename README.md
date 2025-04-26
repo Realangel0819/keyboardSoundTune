@@ -1,3 +1,4 @@
+![penggyu](peng.jpg)
 # Keyboard Sound Tune
 
 키보드 입력 시 소리를 재생하는 프로그램입니다. 한글과 영어 입력 모두 지원합니다.
