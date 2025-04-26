@@ -127,6 +127,17 @@ class SoundApp(QMainWindow):
             chr(97 + i): os.path.join(self.sound_folder, f"{chr(65 + i)}.mp3")
             for i in range(26)  # a부터 z까지
         }
+        
+        # 숫자키 소리 추가
+        for i in range(10):
+            self.eng_sound_files[str(i)] = os.path.join(self.sound_folder, f"{i}.mp3")
+            
+        # 특수키 소리 추가
+        self.eng_sound_files.update({
+            'enter': os.path.join(self.sound_folder, "enter.mp3"),
+            'space': os.path.join(self.sound_folder, "space.mp3"),
+            '`': os.path.join(self.sound_folder, "pengsound.mp3")
+        })
 
         self.soundButton.clicked.connect(self.toggle_sound)  # 버튼 연결
         self.sound_on = False
@@ -212,17 +223,16 @@ class SoundApp(QMainWindow):
             self.activateWindow()  # 창을 활성화
 
     def handle_key_press(self, event):
+        """키 입력 처리"""
         if not self.sound_on:
             return
-
-        key = event.name.lower()  # 소문자로 변환
-        
-        # 매핑된 키가 있는지 확인하고 소리 재생
+            
+        key = event.name.lower()
         if key in self.sound_files:
             sound_file = self.sound_files[key]
             if os.path.exists(sound_file):
                 pygame.mixer.music.load(sound_file)
-                pygame.mixer.music.play(loops=0, start=0.0)
+                pygame.mixer.music.play()
 
     def toggle_sound(self):
         if not self.sound_on:
