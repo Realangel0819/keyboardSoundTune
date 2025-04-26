@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>키보드 소리 재생</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="penguinImage">
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="PENG.JPG"/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="soundButton">
+      <property name="text">
+       <string>소리 ON</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <file alias="PENG.JPG">resources/PENG.JPG</file>
+ </resources>
+</ui>
